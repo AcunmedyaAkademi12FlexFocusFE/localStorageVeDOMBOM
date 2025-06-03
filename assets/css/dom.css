@@ -1,0 +1,13 @@
+button {
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 2px solid lightcoral;
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+button:hover {
+  border: 2px solid lightcoral;
+  background-color: lightcoral;
+  color: #FFF;
+}
