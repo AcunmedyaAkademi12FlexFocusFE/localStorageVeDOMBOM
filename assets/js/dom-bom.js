@@ -106,7 +106,19 @@ welcomeTxt.innerHTML += ' diye gidiyor';
 
 function handleClearBtn() {
   welcomeTxt.innerHTML = '';
+
+  // welcomeBtn.innerHTML = 'Tıkla';
+  count = 0;
+  welcomeBtn.innerHTML = `Sayaç: ${count}`;
 }
 
 clearTxtBtn.addEventListener('click', handleClearBtn);
 
+const meyveler = ['Kavun', 'Karpuz', 'Mango', 'Ananas'];
+// yukarıdaki meyveleri li olarak html'de oluşturacağımız ul elementinin
+// içine ekletelim
+// for, for of ya da forEach hepsi kullanılabilir
+
+for (const meyve of meyveler) {
+  meyvelerListesi.innerHTML += `<li>${meyve}</li>`;
+}
