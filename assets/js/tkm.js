@@ -80,7 +80,7 @@ sifirlaBtn.addEventListener('click', skorSifirla)
 // bize window'u yanı en üstü getiriyor
 // }
 
-tasBtn.addEventListener('click', oyna);
+// tasBtn.addEventListener('click', oyna);
 
 // function kagitOyna() {
 //   // console.log('Kağıt', bilgisayarOyna());
@@ -88,7 +88,7 @@ tasBtn.addEventListener('click', oyna);
 //   oyna(this.innerText);
 // }
 
-kagitBtn.addEventListener('click', oyna);
+// kagitBtn.addEventListener('click', oyna);
 
 // function makasOyna() {
 //   // console.log('Makas', bilgisayarOyna());
@@ -96,7 +96,7 @@ kagitBtn.addEventListener('click', oyna);
 //   oyna(this.innerText);
 // }
 
-makasBtn.addEventListener('click', oyna);
+// makasBtn.addEventListener('click', oyna);
 
 // Notlar
 
@@ -114,3 +114,53 @@ makasBtn.addEventListener('click', oyna);
 // aslında elementi yakalamışız gibi oluyoruz. Böylelikle tüm
 // element özellikleri çalışır hale geliyor
 
+// hayatımıza bir yeni kod geliyor / giriyor 
+
+// document.getElementById(''); -> bu ve türevleri eski kullanım. KULLANMA !!!
+
+// document.querySelector('');
+// -> aynı css gibi seçici yazarak elementi yakalamamızı sağlar
+// ilk bulduğu elementi yakalar ve getirir.
+
+// document.querySelector('.oyunBtn');
+// document.querySelector('.oyunBtn').innerText = 'Merhaba';
+// document.querySelector('.oyunBtn').addEventListener('click', çalışacağı func ismi);
+
+const btn = document.querySelector('.oyunBtn');
+// ilk bulduğu elementi yakalar ve getirir.
+// console.log(btn);
+
+// document.querySelectorAll('.oyunBtn');
+// console.log(document.querySelectorAll('.oyunBtn'));
+// document.querySelectorAll -> all bulduğu tüm elementleri dizi olarak dönüyor
+// dizi yani liste olarak dönüyor.
+// all kullanıyorsam ve 2.elemente ulaşmak istiyorsam ?
+// document.querySelectorAll('.oyunBtn')[2].innerText = 'Bu da kağıt';
+
+const oyunBtns = document.querySelectorAll('.oyunBtn');
+
+for (const btn of oyunBtns) {
+  btn.addEventListener('click', oyna);
+}
+
+// artık bunlara gerek kalmadı.. 
+// Çünkü querySelectorAll ile hepsini yakaladım
+// for of ile her birine erişip addEventListener ile hepsine
+// event ataması yapmış oldum.
+
+// tasBtn.addEventListener('click', oyna);
+// kagitBtn.addEventListener('click', oyna);
+// makasBtn.addEventListener('click', oyna);
+
+// Done is better than perfect
+// KISS -> keep it simple stupid
+
+// artık id ile ulaşmak zorunda değilim.. class ile hallettim
+// sayfada 30 tane buton var .. her birine tek tek id vermektense
+// böyle for of ile yakalayıp işlem yapmamız çok kolay
+// ileride daha da kısasını yazacağız .. ama aceleye gerek yok !!
+
+// bugünün anlam ve önemi olarak
+// hayatımızı kurtarak 2 tane kod öğrendik.
+// biri -> this
+// diğeri -> document.querySelector ve document.querySelectorAll
