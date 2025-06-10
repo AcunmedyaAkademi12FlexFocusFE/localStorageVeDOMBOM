@@ -24,7 +24,8 @@ function bilgisayarOyna() {
   // hamleler.at(-1) bana son elemanı verir
 }
 
-function oyna(hamle) {
+function oyna() {
+  const hamle = this.innerText;
   oyuncuHamle.innerHTML = hamle;
 
   const bilgisayarinHamlesi = bilgisayarOyna();
@@ -63,23 +64,53 @@ function skorSifirla() {
 
 sifirlaBtn.addEventListener('click', skorSifirla)
 
-function tasOyna() {
-  // console.log('Taş', bilgisayarOyna());
-  oyna('Taş');
-}
+// function tasOyna() {
+//   // console.log('Taş', bilgisayarOyna());
+//   // oyna('Taş');
 
-tasBtn.addEventListener('click', tasOyna);
+//   // console.log(this); // -> elementin kendisini getirdi
+//   // console.log(this.innerText);
+//   oyna(this.innerText);
+// }
 
-function kagitOyna() {
-  // console.log('Kağıt', bilgisayarOyna());
-  oyna('Kağıt');
-}
+// const tasOyna = () => {
+//   console.log(this);
+// arrow function kullanıyorsak this kullanmıyoruz
+// this kullanacaksak arrow function kullanmıyoruz
+// bize window'u yanı en üstü getiriyor
+// }
 
-kagitBtn.addEventListener('click', kagitOyna);
+tasBtn.addEventListener('click', oyna);
 
-function makasOyna() {
-  // console.log('Makas', bilgisayarOyna());
-  oyna('Makas');
-}
+// function kagitOyna() {
+//   // console.log('Kağıt', bilgisayarOyna());
+//   // oyna('Kağıt');
+//   oyna(this.innerText);
+// }
 
-makasBtn.addEventListener('click', makasOyna);
+kagitBtn.addEventListener('click', oyna);
+
+// function makasOyna() {
+//   // console.log('Makas', bilgisayarOyna());
+//   // oyna('Makas');
+//   oyna(this.innerText);
+// }
+
+makasBtn.addEventListener('click', oyna);
+
+// Notlar
+
+// bugün hayatımıza this diye bir kelime giriyor
+// this -> programcılıkta joker bir kelimedir.
+// nesnenin içinde iş yaparken nesnenin kendisini dönüyor
+// js'de biraz farklı çalışıyor bu durum
+// this tetikleyen elementi getiriyor
+// arrow function'da bir önceki scope'u getirdiği için çalışmıyor
+// console.log(this); -> window getiriyor
+
+// function yazdığımızda this kelimesi eğer func scope'u içinde
+// kullanırsak bize bu func tetikleyen elementi getirir 
+// elemente id ile ulaşmışız gibi işlem yapabiliriz
+// aslında elementi yakalamışız gibi oluyoruz. Böylelikle tüm
+// element özellikleri çalışır hale geliyor
+
